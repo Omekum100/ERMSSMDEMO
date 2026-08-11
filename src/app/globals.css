@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  @apply bg-[#fcfaf6];
+}
+
+body {
+  @apply bg-surface text-slate-900 antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(197, 139, 43, 0.08), transparent 26%),
+    radial-gradient(circle at bottom right, rgba(53, 91, 76, 0.06), transparent 24%);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #a78861 transparent;
+}
+
+.table-scroll {
+  @apply overflow-x-auto rounded-xl border border-line bg-white;
+}
+
+.tribal-surface {
+  @apply relative overflow-hidden rounded-[24px] border border-line bg-white shadow-panel;
+}
+
+.tribal-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(197, 139, 43, 0.08), transparent 26%),
+    radial-gradient(circle at 100% 0, rgba(165, 77, 45, 0.08), transparent 22%);
+}
+
+.tribal-divider {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(165, 77, 45, 0.75) 0 10px,
+    rgba(197, 139, 43, 0.75) 10px 20px,
+    rgba(53, 91, 76, 0.75) 20px 30px,
+    transparent 30px 40px
+  );
+}
+
+.tribal-grid {
+  background-image:
+    linear-gradient(rgba(56, 33, 27, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 33, 27, 0.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.tribal-sidebar {
+  background:
+    linear-gradient(180deg, rgba(56, 33, 27, 0.98), rgba(66, 40, 28, 0.98)),
+    radial-gradient(circle at top right, rgba(197, 139, 43, 0.12), transparent 24%);
+}
+
+.tribal-sidebar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.26;
+  background-image:
+    radial-gradient(circle at 10px 10px, rgba(248, 244, 238, 0.18) 0 2px, transparent 2px),
+    linear-gradient(135deg, transparent 0 46%, rgba(248, 244, 238, 0.08) 46% 54%, transparent 54% 100%);
+  background-size: 32px 32px, 120px 120px;
+}
+
+.tribal-hero {
+  background:
+    linear-gradient(180deg, rgba(56, 33, 27, 0.97), rgba(83, 47, 31, 0.97)),
+    radial-gradient(circle at 100% 0, rgba(197, 139, 43, 0.18), transparent 26%);
+}
+
+.tribal-motif {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.18;
+  filter: blur(0.1px);
+}
