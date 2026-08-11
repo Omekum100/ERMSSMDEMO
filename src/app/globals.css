@@ -22,6 +22,19 @@ body {
   scrollbar-color: #a78861 transparent;
 }
 
+/* Keep selected text and the typing cursor visible on the light interface. */
+::selection {
+  color: #ffffff;
+  background: #355b4c;
+}
+
+input,
+textarea,
+select {
+  color: #0f172a;
+  caret-color: #a54d2d;
+}
+
 .table-scroll {
   @apply overflow-x-auto rounded-xl border border-line bg-white;
 }
