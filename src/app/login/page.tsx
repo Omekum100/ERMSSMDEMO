@@ -17,6 +17,16 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [securityCode, setSecurityCode] = useState("");
 
+  const fillDemoCredentials = (role: "admin" | "student") => {
+    const credentials = role === "admin"
+      ? { username: "admin", password: "Admin@123", securityCode: "123456" }
+      : { username: "raj001", password: "Student@123", securityCode: "111111" };
+
+    setUsername(credentials.username);
+    setPassword(credentials.password);
+    setSecurityCode(credentials.securityCode);
+  };
+
   const submit = () => {
     const result = login({ username, password, securityCode });
     notify({ title: result.success ? "Access granted" : "Login failed", description: result.message, variant: result.success ? "success" : "error" });
@@ -72,10 +82,26 @@ export default function LoginPage() {
               <Input value={securityCode} onChange={(event) => setSecurityCode(event.target.value)} placeholder="6-digit code" />
             </div>
             <Button className="w-full" onClick={submit}>Login</Button>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Button
+                className="w-full border border-[#d7b892] bg-white text-[#7b4b2a] shadow-none hover:bg-[#fbf7f1]"
+                onClick={() => fillDemoCredentials("admin")}
+                type="button"
+              >
+                Fill Admin Demo
+              </Button>
+              <Button
+                className="w-full border border-[#d7b892] bg-white text-[#7b4b2a] shadow-none hover:bg-[#fbf7f1]"
+                onClick={() => fillDemoCredentials("student")}
+                type="button"
+              >
+                Fill Student Demo
+              </Button>
+            </div>
             <div className="rounded-xl border border-dashed border-line bg-[#fbf7f1] p-4 text-sm text-slate-600">
               <p className="font-semibold text-slate-900">Demo Credentials</p>
-              <p className="mt-2">Admin - `admin` / `Admin@123` / `123456`</p>
-              <p className="mt-1">Student - `raj001` / `Student@123` / `111111`</p>
+              <p className="mt-2">Admin - admin / Admin@123 / 123456</p>
+              <p className="mt-1">Student - raj001 / Student@123 / 111111</p>
             </div>
           </div>
         </Card>
