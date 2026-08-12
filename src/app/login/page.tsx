@@ -84,14 +84,14 @@ export default function LoginPage() {
             <Button className="w-full" onClick={submit}>Login</Button>
             <div className="grid gap-3 sm:grid-cols-2">
               <Button
-                className="w-full border border-[#d7b892] bg-white text-[#7b4b2a] shadow-none hover:bg-[#fbf7f1]"
+                className="w-full border border-[#d7b892] !bg-[#fbf7f1] !text-[#7b4b2a] shadow-none hover:!bg-[#f2e5d4]"
                 onClick={() => fillDemoCredentials("admin")}
                 type="button"
               >
                 Fill Admin Demo
               </Button>
               <Button
-                className="w-full border border-[#d7b892] bg-white text-[#7b4b2a] shadow-none hover:bg-[#fbf7f1]"
+                className="w-full border border-[#d7b892] !bg-[#fbf7f1] !text-[#7b4b2a] shadow-none hover:!bg-[#f2e5d4]"
                 onClick={() => fillDemoCredentials("student")}
                 type="button"
               >
